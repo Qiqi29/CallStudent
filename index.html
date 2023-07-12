@@ -47,6 +47,7 @@
 					if(account == user.userAccount && password == user.userPassword){
 						console.log("账号正确");
 						document.getElementById("errorTxt").innerHTML = "";
+						window.location.href="home.html";
 						break;
 					}else{
 						document.getElementById("errorTxt").innerHTML = "账号或密码错误";
