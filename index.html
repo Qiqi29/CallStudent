@@ -13,10 +13,8 @@
 			<div class="login">
 				<form action="">
 					<p class="title">Hello👋</p>
-					<p class="AccountTxt">账号</p>
-					<input type="number" name="userName" id="name" value="">
-					<p class="PasswordTxt">密码</p>
-					<input type="password" name="password" id="password" value="">
+					<input type="number" name="userName" id="account" value="" placeholder="请输入账号">
+					<input type="password" name="password" id="password" value="" placeholder="请输入密码">
 					<input type="button" name="login" id="loginButt" value="登录">
 					<p id="errorTxt"></p>
 				</form>
@@ -30,7 +28,7 @@
 		let account;
 		let password;
 		$("#loginButt").click(function(){
-			account = document.getElementById("name").value;
+			account = document.getElementById("account").value;
 			password = document.getElementById("password").value;
 			if(account == "" || password == ""){
 				document.getElementById("errorTxt").innerHTML = "请输入账号或密码";
@@ -45,7 +43,6 @@
 				for(let i=0; i < data.length; i++){
 					let user = data[i];
 					if(account == user.userAccount && password == user.userPassword){
-						console.log("账号正确");
 						document.getElementById("errorTxt").innerHTML = "";
 						window.location.href="home.html";
 						break;
