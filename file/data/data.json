@@ -1,0 +1,20 @@
+[
+    {
+        "userId":1,
+        "userName":"软件技术221",
+        "userAccount":2022221,
+        "userPassword":"0229"
+    },
+    {
+        "userId":2,
+        "userName":"软件技术222",
+        "userAccount":2022222,
+        "userPassword":"0520"
+    },
+    {
+        "userId":3,
+        "userName":"软件技术223",
+        "userAccount":2022223,
+        "userPassword":"1324"
+    }
+]

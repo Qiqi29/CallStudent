@@ -2,3 +2,66 @@
     padding: 0;
     margin: 0;
 }
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(50deg, #f1daef, #f1f1dc, #d6ebf4);
+}
+
+.nav{
+    height: 100px;
+}
+
+.loginbg{
+    width: 85%;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #ffffffce;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.login{
+    margin: 40px;
+}
+
+.login .title{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.login .AccountTxt, .login .PasswordTxt{
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.login input{
+    margin: 5px 0px 15px 0px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    width: 100%;
+    height: 35px;
+    text-indent: 1em;
+}
+
+.login #loginButt{
+    color: #fff;
+    margin-top: 20px;
+    text-indent: 0em;
+    background-color: #576bfe;
+    transition: all 0.1s;
+}
+.login #loginButt:active{
+    background-color: #4254e1;
+}
+
+.login #errorTxt{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #ff4747;
+}

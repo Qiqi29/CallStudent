@@ -3,24 +3,57 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="file/css/homePage.css">
-	<title>开始点名啦！</title>
+	<link rel="stylesheet" href="file/css/login.css">
+	<title>登录</title>
 </head>
 <body>
 	<div class="App">
-		<div class="header">
-
-		</div>
-		<div class="classCard">
-			<div class="classData">
-				<img class="classPhoto" src="file/img/软件221头像.png" alt="">
-				<h1 class="className">软件技术221班</h1>
-				<p class="classPeople">班级人数：60人</p>
-			</div>
-			<div class="playName">
-				<input type="button" value="开始点名">
+		<div class="nav"></div>
+		<div class="loginbg">
+			<div class="login">
+				<form action="">
+					<p class="title">Hello👋</p>
+					<p class="AccountTxt">账号</p>
+					<input type="number" name="userName" id="name" value="">
+					<p class="PasswordTxt">密码</p>
+					<input type="password" name="password" id="password" value="">
+					<input type="button" name="login" id="loginButt" value="登录">
+					<p id="errorTxt"></p>
+				</form>
 			</div>
 		</div>
 	</div>
+	<script src="file/js/jquery-3.7.0.js"></script>
+	<script>
+
+		
+		let account;
+		let password;
+		$("#loginButt").click(function(){
+			account = document.getElementById("name").value;
+			password = document.getElementById("password").value;
+			if(account == "" || password == ""){
+				document.getElementById("errorTxt").innerHTML = "请输入账号或密码";
+			}else{
+				document.getElementById("errorTxt").innerHTML = "";
+				data();
+			}
+		})
+		
+		function data(){
+			$.get("file/data/data.json",{},function(data){
+				for(let i=0; i < data.length; i++){
+					let user = data[i];
+					if(account == user.userAccount && password == user.userPassword){
+						console.log("账号正确");
+						document.getElementById("errorTxt").innerHTML = "";
+						break;
+					}else{
+						document.getElementById("errorTxt").innerHTML = "账号或密码错误";
+					}
+				}
+            });
+		}
+	</script>
 </body>
 </html>
