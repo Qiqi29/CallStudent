@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.App{
+    width: 100vw;
+}
+
+.header{
+    width: calc(100% - 40px);
+    height: 50px;
+    margin: 0 auto;
+}
+
+.classCard{
+    width: calc(100% - 40px);
+    height: 170px;
+    margin: 0 auto;
+    border-radius: 15px;
+    background: url(../img/多彩背景.png) no-repeat center center;
+    background-size: cover;
+    border: 1px solid #e1e1e1;
+    position: relative;
+}
+
+.classData{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.classPhoto{
+    float: left;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 14px;
+}
+.className{
+    float: left;
+    font-size: 1.1rem;
+    margin: 6px 0;
+}
+.classPeople{
+    font-size: 0.9rem;
+}
+
+.playName{
+    position: absolute;
+    bottom: -17px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.playName > input{
+    border: none;
+    outline: none;
+    width: 140px;
+    height: 35px;
+    border-radius: 30px;
+    background-color: #3a8fff;
+    color: #fff;
+    box-shadow: 0px 3px 15px 2px #3a8fff60;
+    transition: all 0.15s;
+}
+.playName > input:active{
+    background-color: #509cff;
+    transform: scale(0.95);
+}
