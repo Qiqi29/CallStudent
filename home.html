@@ -7,5 +7,31 @@
 </head>
 <body>
     <p>登录成功</p>
+    <p class="className">班级：</p>
+
+    <script>
+
+        let NewClassName = "";
+
+        function getCookie(className){
+            let arr = document.cookie.split('; ');
+            for(let i=0; i<arr.length; i++){
+                let arr2 = arr[i].split('=');
+                if(arr2[0] == className){
+                    NewClassName = arr2[1];
+                    return arr2[1];
+                }
+            }
+        }
+
+        window.onload = function(){
+            if(getCookie('className')){
+                document.querySelector('.className').innerHTML = NewClassName;
+            }else{
+                alert("请重新登录");
+                window.location.href = "index.html";
+            }
+        }
+    </script>
 </body>
 </html>
