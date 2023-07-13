@@ -18,21 +18,16 @@
 			</div>
 			<form action="">
 				<div id="classList">
-					<span>请选择班级</span>
+					<span class="className">请选择班级</span>
 					<img src="file/img/下拉.png" alt="">
-					<div class="className">
+					<div class="classNameList">
 						<ul>
-							<li>软件技术 221班</li>
-							<li>软件技术 222班</li>
-							<li>软件技术 223班</li>
+							<li onclick="setOption(this)">软件技术 221班</li>
+							<li onclick="setOption(this)">软件技术 222班</li>
+							<li onclick="setOption(this)">软件技术 223班</li>
 						</ul>
 					</div>
 				</div>
-				<select id="classList2">
-					<option value="">软件技术 221班</option>
-					<option value="">软件技术 222班</option>
-					<option value="">软件技术 223班</option>
-				</select>
 				<input type="password" name="password" id="password" value="" placeholder="请输入密码">
 				<div id="errorTxt"></div>
 				<input type="button" name="login" id="loginButt" value="登录">

@@ -1,34 +1,34 @@
 
-let Account_input = document.getElementById("account");
-let Password_input = document.getElementById("password");
-let errorTxt = document.getElementById("errorTxt");
 
 // 检测输入框是否输入内容
 // account.addEventListener('blur', function(){
-//     if(account.value != ""){
-//         loginInput();
-//     }
-// })
-// password.addEventListener('blur', function(){
-//     if(password.value != ""){
-//         loginInput();
-//     }
-// })
-
+    //     if(account.value != ""){
+        //         loginInput();
+        //     }
+        // })
+        // password.addEventListener('blur', function(){
+            //     if(password.value != ""){
+                //         loginInput();
+                //     }
+                // })
+                
 // 检测账号密码输入框的内容
 // function loginInput(){
-//     let loginButt = document.getElementById("loginButt");
-//     if(Account_input.value != "" && Password_input.value != ""){
-//         loginButt.disabled = false;
-//     }else{
-//         loginButt.disabled = true;
-//     }
-// }
+    //     let loginButt = document.getElementById("loginButt");
+    //     if(Account_input.value != "" && Password_input.value != ""){
+        //         loginButt.disabled = false;
+        //     }else{
+            //         loginButt.disabled = true;
+            //     }
+            // }
 
+const Account_input = document.querySelector("#classList .className");
+const Password_input = document.getElementById("password");
+const errorTxt = document.getElementById("errorTxt");
 
 $("#loginButt").click(function(){
-    if(Account_input.value == "" || Password_input.value == ""){
-        errorTxt.innerHTML = "请输入账号或密码";
+    if(Password_input.value == ""){
+        errorTxt.innerHTML = "请输入班级密码";
     }else{
         data();
     }
@@ -38,7 +38,7 @@ function data(){
     $.get("file/data/data.json",{},function(data){
         for(let i=0; i < data.length; i++){
             let user = data[i];
-            if(Account_input.value == user.userAccount && Password_input.value == user.userPassword){
+            if(Account_input.innerText == user.userName && Password_input.value == user.userPassword){
                 errorTxt.innerHTML = "";
                 window.location.href="home.html";
                 break;
@@ -51,17 +51,23 @@ function data(){
 
 // 显示隐藏班级列表
 const butt = document.getElementById('classList')
-const menu = document.querySelector('.className')
+const menu = document.querySelector('.classNameList')
 let show = 0
 butt.addEventListener('click', ()=> {
     if(show == 0){
-        menu.style.opacity = "1"
-        menu.style.transform = "scale(1)"
+        menu.style.display = "block"
         show = 1
     }else{
-        menu.style.opacity = "0"
-        menu.style.transform = "scale(.1)"
+        menu.style.display = "none"
         show = 0
     }
 })
 
+// 选择班级后更新文本
+const classList = document.querySelectorAll('#classList .className ul li');
+const className = document.querySelector('#classList .className');
+
+function setOption(option){
+    let setText = option.innerText;
+    className.innerText = setText;
+}
