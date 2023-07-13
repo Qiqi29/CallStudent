@@ -55,10 +55,12 @@ const menu = document.querySelector('.classNameList')
 let show = 0
 butt.addEventListener('click', ()=> {
     if(show == 0){
-        menu.style.display = "block"
+        menu.style.opacity = "1"
+        menu.style.transform = "scale(1)"
         show = 1
     }else{
-        menu.style.display = "none"
+        menu.style.opacity = "0"
+        menu.style.transform = "scale(0)"
         show = 0
     }
 })

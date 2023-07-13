@@ -69,7 +69,10 @@ body{
     box-shadow: 0px 5px 20px #00000020;
     width: calc(100% - 20px);
     padding: 10px;
-    display: none;
+    transform: scale(0);
+    transform-origin: 50% -20px;
+    transition: 0.3s;
+    opacity: 0;
 }
 #classList .classNameList ul li{
     height: 50px;
@@ -80,7 +83,6 @@ body{
 #classList .classNameList ul li:hover{
     background-color: #4b7bff10;
 }
-
 
 
 .login input{
