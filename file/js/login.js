@@ -1,4 +1,36 @@
 
+// 欢迎文本打字机特效
+let helloTitle = document.getElementById('helloTitle');
+let helloText = document.getElementById('helloText');
+let Text1 = "Hello!👋😊";
+let Text2 = "岁月漫长，欢迎来访。";
+let index = 0;
+
+// 第一行文本
+function helloTxtVFX1(){
+    if(Text1.length > index){
+        helloTitle.innerHTML += Text1.charAt(index);  //逐个添加字符
+        index++;
+        setTimeout(helloTxtVFX1, 100);  //设置每个字符的时间
+    }else{
+        helloTitle.style.borderRight = "none";
+        index = 0;
+        helloTxtVFX2();
+    }
+}
+helloTxtVFX1();
+// 第二行文本
+function helloTxtVFX2(){
+    if(Text2.length > index){
+        helloText.innerHTML += Text2.charAt(index);
+        index++;
+        setTimeout(helloTxtVFX2, 100);
+    }else{
+        helloText.style.borderRight = "none";
+    }
+}
+
+
 const Account_input = document.querySelector("#classList .className");
 const Password_input = document.getElementById("password");
 const errorTxt = document.getElementById("errorTxt");
