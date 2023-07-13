@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,50 +8,39 @@
 </head>
 <body>
 	<div class="App">
+		<!-- 顶部导航栏 -->
 		<div class="nav"></div>
-		<div class="loginbg">
-			<div class="login">
-				<form action="">
-					<p class="title">Hello👋</p>
-					<input type="number" name="userName" id="account" value="" placeholder="请输入账号">
-					<input type="password" name="password" id="password" value="" placeholder="请输入密码">
-					<input type="button" name="login" id="loginButt" value="登录">
-					<p id="errorTxt"></p>
-				</form>
+		<!-- 登录模块 -->
+		<div class="login">
+			<div class="hello">
+				<p class="title">Hello!👋😊</p>
+				<p class="txt">岁月漫长，欢迎来访。</p>
 			</div>
+			<form action="">
+				<div id="classList">
+					<span>请选择班级</span>
+					<img src="file/img/下拉.png" alt="">
+					<div class="className">
+						<ul>
+							<li>软件技术 221班</li>
+							<li>软件技术 222班</li>
+							<li>软件技术 223班</li>
+						</ul>
+					</div>
+				</div>
+				<select id="classList2">
+					<option value="">软件技术 221班</option>
+					<option value="">软件技术 222班</option>
+					<option value="">软件技术 223班</option>
+				</select>
+				<input type="password" name="password" id="password" value="" placeholder="请输入密码">
+				<div id="errorTxt"></div>
+				<input type="button" name="login" id="loginButt" value="登录">
+			</form>
 		</div>
 	</div>
+	<!-- 引入js文件 -->
 	<script src="file/js/jquery-3.7.0.js"></script>
-	<script>
-
-		
-		let account;
-		let password;
-		$("#loginButt").click(function(){
-			account = document.getElementById("account").value;
-			password = document.getElementById("password").value;
-			if(account == "" || password == ""){
-				document.getElementById("errorTxt").innerHTML = "请输入账号或密码";
-			}else{
-				document.getElementById("errorTxt").innerHTML = "";
-				data();
-			}
-		})
-		
-		function data(){
-			$.get("file/data/data.json",{},function(data){
-				for(let i=0; i < data.length; i++){
-					let user = data[i];
-					if(account == user.userAccount && password == user.userPassword){
-						document.getElementById("errorTxt").innerHTML = "";
-						window.location.href="home.html";
-						break;
-					}else{
-						document.getElementById("errorTxt").innerHTML = "账号或密码错误";
-					}
-				}
-            });
-		}
-	</script>
+	<script src="file/js/login.js"></script>
 </body>
 </html>
