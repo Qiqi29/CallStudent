@@ -3,30 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="file/css/home.css">
     <title>主页</title>
 </head>
 <body>
-    <p>登录成功</p>
-    <p class="className">班级：</p>
+    <div id="App">
+        <div id="nav">
+
+        </div>
+        <!-- 班级信息卡片 -->
+        <div id="classCard">
+            <img class="classImg" src="file/img/软件221头像.png" alt="">
+            <div class="classText">
+                <p class="className"></p>
+                <p class="classNum">班级人数：<span id="classNumber"></span>人</p>
+            </div>
+            <div id="RollCallButt">
+                <img src="file/img/群组.png" alt="">
+                <p>开始点名</p>
+            </div>
+        </div>
+        <!-- 点名情况卡片 -->
+        <div id="classRecord">
+            <div>
+                <p class="title">点名情况</p>
+                <div class="QingJia">
+                    <p class="title">请假</p>
+                    <p id="QingJia">无</p>
+                </div>
+                <div class="ChiDao">
+                    <p class="title">迟到</p>
+                    <p id="ChiDao">无</p>
+                </div>
+                <div class="KuangKe">
+                    <p class="title">旷课</p>
+                    <p id="KuangKe">无</p>
+                </div>
+            </div>
+        </div>
+        <!-- 历史记录卡片 -->
+        <div id="classHistory">
+            <div>
+                <p class="title">历史记录</p>
+            </div>
+        </div>
+    </div>
 
     <script>
 
+        // 判断登录的班级
         let NewClassName = "";
-
+        let NewClassNum = "";
         function getCookie(className){
             let arr = document.cookie.split('; ');
             for(let i=0; i<arr.length; i++){
                 let arr2 = arr[i].split('=');
                 if(arr2[0] == className){
+                    let arr3 = arr[1].split('=');
                     NewClassName = arr2[1];
+                    NewClassNum = arr3[1];
                     return arr2[1];
                 }
             }
         }
-
+        // 检测Cookie中的内容
         window.onload = function(){
             if(getCookie('className')){
                 document.querySelector('.className').innerHTML = NewClassName;
+                document.getElementById('classNumber').innerHTML = NewClassNum;
             }else{
                 alert("请重新登录");
                 window.location.href = "index.html";

@@ -1,34 +1,19 @@
 
 // 欢迎文本打字机特效
-let helloTitle = document.getElementById('helloTitle');
 let helloText = document.getElementById('helloText');
-let Text1 = "Hello!👋😊";
-let Text2 = "岁月漫长，欢迎来访。";
+let Text = "岁月漫长，欢迎来访。";
 let index = 0;
 
-// 第一行文本
-function helloTxtVFX1(){
-    if(Text1.length > index){
-        helloTitle.innerHTML += Text1.charAt(index);  //逐个添加字符
+function helloTxtVFX(){
+    if(Text.length > index){
+        helloText.innerHTML += Text.charAt(index);  //逐个添加字符
         index++;
-        setTimeout(helloTxtVFX1, 100);  //设置每个字符的时间
-    }else{
-        helloTitle.style.borderRight = "none";
-        index = 0;
-        helloTxtVFX2();
-    }
-}
-helloTxtVFX1();
-// 第二行文本
-function helloTxtVFX2(){
-    if(Text2.length > index){
-        helloText.innerHTML += Text2.charAt(index);
-        index++;
-        setTimeout(helloTxtVFX2, 100);
+        setTimeout(helloTxtVFX, 80);  //设置每个字符的时间
     }else{
         helloText.style.borderRight = "none";
     }
 }
+helloTxtVFX();
 
 
 const Account_input = document.querySelector("#classList .className");
@@ -44,11 +29,13 @@ $("#loginButt").click(function(){
     }
 })
 // 调用json文件，判断密码是否正确
+let classNum = 0;
 function data(){
     $.get("file/data/data.json",{},function(data){
         for(let i=0; i < data.length; i++){
             let user = data[i];
-            if(Account_input.innerText == user.userName && Password_input.value == user.userPassword){
+            if(Account_input.innerText == user.className && Password_input.value == user.classPassword){
+                classNum = user.classNum;
                 setCookie();
                 errorTxt.innerHTML = "";
                 window.location.href="home.html";
@@ -62,6 +49,7 @@ function data(){
 // 设置班级Cookie
 function setCookie(){
     document.cookie = "className=" + Account_input.innerText + "; expires=0";
+    document.cookie = "classNum=" + classNum + "; expires=0";
 }
 
 

@@ -1,22 +1,20 @@
 [
     {
-        "userId":1,
-        "userName":"软件技术 221班",
-        "userPassword":"0229"
+        "classId":1,
+        "className":"软件技术221班",
+        "classNum":"60",
+        "classPassword":"0229"
     },
     {
-        "userId":2,
-        "userName":"软件技术 222班",
-        "userPassword":"0520"
+        "classId":2,
+        "className":"软件技术222班",
+        "classNum":"72",
+        "classPassword":"0520"
     },
     {
-        "userId":3,
-        "userName":"软件技术 223班",
-        "userPassword":"1324"
-    },
-    {
-        "userId":4,
-        "userName":"测试班级",
-        "userPassword":"1234"
+        "classId":3,
+        "className":"软件技术223班",
+        "classNum":"20",
+        "classPassword":"1324"
     }
 ]

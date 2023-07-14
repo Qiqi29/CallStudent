@@ -5,17 +5,17 @@ a{text-decoration: none; color: #000;}
 ul,ol{list-style: none;}
 html{scroll-behavior: smooth;}
 
-.App{
+#App{
     margin: 40px;
 }
-.nav{
+#nav{
     height: 100px;
 }
 
 /* ========== 欢迎文本 ========== */
 
 .login .hello{
-    height: 200px;
+    height: 160px;
 }
 #helloTitle{
     font-size: 2em;
@@ -24,8 +24,6 @@ html{scroll-behavior: smooth;}
 #helloText{
     font-size: 1.5em;
     font-weight: bold;
-}
-#helloTitle, #helloText{
     display: inline-block;
     border-right: 0.15em solid orange;
     overflow: hidden;
