@@ -69,10 +69,12 @@ butt.addEventListener('click', ()=> {
         arrow.style.transform = "rotate(180deg)"
         show = 1
     }else{
-        menu.style.opacity = "0"
-        menu.style.transform = "scale(0)"
-        arrow.style.transform = "rotate(0deg)"
-        show = 0
+        setTimeout(() => {
+            menu.style.opacity = "0"
+            menu.style.transform = "scale(0)"
+            arrow.style.transform = "rotate(0deg)"
+            show = 0
+        }, 100);
     }
 })
 
